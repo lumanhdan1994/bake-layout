@@ -1,0 +1,340 @@
+/* GLOBAL CSS */
+
+header, section, footer, aside, nav, main, article, figure {
+    display: block;
+}
+body{
+    margin:0;
+}
+html{
+    font-size:20px;
+}
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Variable global CSS */
+:root{
+    --pink: #f71783;
+    --padding: 10px 30px;
+}
+
+
+.padding_content{
+    padding: 0 10%;
+
+}
+.padding_item{
+    padding: 35px 0;
+}
+h1.padding_item {
+    margin:0;
+    padding-bottom:0;
+}
+
+/* END GLOBAL CSS */
+
+.header{
+    background-color:#4e2a84;
+}
+.header__content{
+    width:100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__content a{
+    text-decoration: none;
+}
+.header__logo span{
+    color:white;
+    font-size:2rem;
+    font-weight:700;
+    /* flex-shrink: 1;  */
+}
+.header__nav{
+    margin:0;
+    padding:0;
+}
+
+.header__nav-item{
+    display: inline;
+    margin-right:1rem;
+}
+.header__nav-item > a{
+    position:relative;
+}
+
+.header__nav-item a{
+    color:white;
+    font-size:.7rem;
+    font-weight: 500;
+}
+.header__nav-item a:hover{
+    color: var(--pink);
+}
+.header__nav-item.active a{
+    color:var(--pink)
+}
+
+.header__nav-item.active a::before{
+    position: absolute;
+    content: '';
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--pink)
+}
+
+.carousel{
+    height: 30rem;
+    background: url(../img/b3.jpg) no-repeat center center;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel__content{
+    text-align: center;
+    color:white;
+}
+.carousel__content > button{
+    padding: 10px 40px;
+    border: 2px solid #f71783;
+    background: linear-gradient(to right,#fca2ca,#f71783);
+    color: white;
+    cursor: pointer;
+}
+
+/* animation: tenAnimation thoigianchuyendong kieuchuyendong delay solanlap */
+.carousel__content > button:hover{
+    animation: pump 1s linear 0s infinite;
+}
+@keyframes pump{
+    0%{
+        transform: translateY(0px);
+    }
+    33%{
+        transform: translateY(-15px);
+    }
+    66%{
+        transform: translateY(15px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+.carousel__content h1{
+    margin-top:0;
+    font-size: 3rem;
+    font-weight: 400;
+    text-shadow: -6px -4px 8px var(--pink);
+}
+.intro{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    /* grid-template-rows: 300px 500px; */
+}
+.intro img{
+    width: 100%;
+    display: block;
+}
+.intro__img-1{
+  grid-column: 2/span 2;
+}
+.intro__best{
+    grid-column:1/span 2; 
+}
+.intro__img-4{
+    grid-column: 3/span 2;
+}
+.intro__trandition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Statictis */
+.statistic__info{
+    display: flex;
+}
+.statistic__info__item{
+    width:100%;
+}
+.statistic__info__item p{
+    color:#4d2b85;
+}
+.statistic__info__item p, .statistic__info__item span{
+    display: block;
+    text-align: center;
+}
+.statistic__video{
+    display: flex;
+}
+.statistic__video > video{
+    height:315px;
+    width: 50%;
+    padding-left: 5px;
+}
+.statistic__video > iframe{
+    width: 50%;
+    padding-right:5px;
+}
+
+/* /Statictis */
+
+
+/* Team */
+.team{
+    background: #4d2b85;
+    color:white;
+}
+.team > h1{
+    text-align: center;
+}
+.team__info{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+}
+.team__info__item > img{
+    width:100%;
+}
+
+.team__info__item{
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ITEM 1 */
+.team__info__item.item1 > .team__info__item__detail{
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #00000075;
+    padding: 10px 20px;
+    transition: all 0.3s linear;
+}
+.team__info__item.item1:hover .info{
+    display: none;
+}
+.team__info__item.item1:hover .team__info__item__detail{
+    opacity: 1;
+}
+/* /ITEM 1 */
+
+
+/* ITEM2 */
+.team__info__item.item2 > .info{
+    transform: translateY(100%);
+    transition: all 0.3s linear;
+}
+.team__info__item.item2:hover .info{
+    transform: translateY(0%);
+}
+/* /ITEM2 */
+
+
+/* ITEM3 */
+.team__info__item.item3 > .info{
+    transform: scale(0);
+    transition: all 0.3s linear;
+}
+.team__info__item.item3:hover .info{
+    transform: scale(1);
+}
+/* /ITEM3 */
+
+
+/* ITEM4 */
+
+.team__info__item.item4 > .info{
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+
+.team__info__item.item4:hover .info{
+    opacity: 1;
+    transform: rotate(360deg);
+}
+
+/* /ITEM4 */
+.team__info__item.item5 > .info{
+    position: absolute;
+    background: #fe0f82;
+    padding: 5px;
+    bottom: 0;
+    width: 321%;
+    transform: skew(60deg);
+    height: 100%;
+    left: -418%;
+
+    transition: all 0.3s linear;
+}
+.team__info__item.item5:hover .info{
+    left: -110%;
+
+}
+/* /ITEM4 */
+
+
+
+.team__info__item > .info p{
+    margin: 9px 6px;
+    font-size: 14px;
+}
+.team__info__item > .info{
+    position: absolute;
+    background: #fe0f82;
+    padding: 5px;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* /Team */
+
+
+/* Contact */
+
+.contact > h1{
+    text-align: center;
+}
+
+.contact__info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+.contact__info :nth-of-type(5){
+    grid-column: 1/span 2 ;
+}
+.contact__info input, .contact__info textarea{
+    width:100%;
+}
+.contact__info input, .contact__info textarea{
+    padding: 10px;
+    border: 1px solid #00000033;
+}
+.contact button{
+    border: 1px solid #fd1081;
+    width: 100%;
+    border-radius: 4px;
+    padding: 10px;
+    background: #fe0f82;
+    margin-top: 5px;
+    color: white;
+}
+
+/* /Contact */
+
